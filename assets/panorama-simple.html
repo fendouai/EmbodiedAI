@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>具身智能产业链 · 公司速查</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #05070f; color: #e6e9f5; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "SF Pro Display", "Helvetica Neue", sans-serif; }
+  .page {
+    width: 1680px; padding: 56px 56px 64px;
+    background:
+      radial-gradient(ellipse 1400px 700px at 50% 0%, rgba(120,80,255,0.18), transparent 60%),
+      radial-gradient(ellipse 900px 500px at 0% 50%, rgba(0,212,255,0.10), transparent 60%),
+      radial-gradient(ellipse 900px 500px at 100% 100%, rgba(255,80,120,0.08), transparent 60%),
+      linear-gradient(180deg, #05070f 0%, #0a0e1f 50%, #05070f 100%);
+  }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 40px; }
+  .eyebrow {
+    display: inline-block; padding: 8px 22px; border-radius: 999px;
+    background: linear-gradient(90deg, rgba(0,212,255,0.15), rgba(180,120,255,0.15));
+    border: 1px solid rgba(0,212,255,0.3);
+    font-size: 14px; letter-spacing: 4px; color: #9ad9ff;
+    text-transform: uppercase; margin-bottom: 22px;
+  }
+  .title {
+    font-size: 72px; font-weight: 900; letter-spacing: -2px; line-height: 1.05;
+    background: linear-gradient(90deg, #ffffff 0%, #9ad9ff 35%, #b48aff 65%, #ffb48a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 18px;
+  }
+  .stat-row { display: flex; justify-content: center; gap: 48px; margin-top: 22px; }
+  .stat { text-align: center; }
+  .stat .num {
+    font-size: 38px; font-weight: 900; letter-spacing: -1px; line-height: 1;
+    background: linear-gradient(90deg, #00d4ff, #b48aff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat .lbl { font-size: 12px; color: #6b7390; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px; }
+
+  /* Legend */
+  .legend {
+    display: flex; justify-content: center; gap: 32px;
+    padding: 14px 24px; margin: 28px auto 36px; max-width: 800px;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; backdrop-filter: blur(8px);
+  }
+  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #c8cee0; }
+  .legend-swatch { width: 16px; height: 16px; border-radius: 4px; }
+
+  /* Layer */
+  .layer {
+    position: relative; display: grid; grid-template-columns: 280px 1fr; gap: 36px;
+    padding: 32px 36px; margin-bottom: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.10); border-radius: 18px;
+    backdrop-filter: blur(8px);
+  }
+  .layer::before {
+    content: ""; position: absolute; left: -1px; top: 28px; bottom: 28px; width: 5px; border-radius: 5px;
+    background: var(--layer-color, #00d4ff);
+    box-shadow: 0 0 28px var(--layer-color, #00d4ff);
+  }
+  .layer-meta { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .layer-id {
+    font-size: 120px; font-weight: 900; line-height: 0.95; letter-spacing: -4px;
+    background: linear-gradient(180deg, var(--layer-color, #00d4ff), color-mix(in srgb, var(--layer-color, #00d4ff) 25%, transparent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
+  }
+  .layer-name { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: 1px; margin-top: 6px; }
+  .layer-tag { font-size: 13px; color: #6b7390; letter-spacing: 2.5px; text-transform: uppercase; margin-top: 8px; }
+  .layer-count { font-size: 14px; color: #8a92ab; margin-top: 12px; font-weight: 500; }
+  .layer-count strong { color: var(--layer-color, #00d4ff); font-weight: 800; font-size: 16px; }
+
+  .companies { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .co {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 18px 26px; border-radius: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+    transition: all 0.2s;
+  }
+  .co .badge {
+    display: inline-block; padding: 4px 12px; border-radius: 5px;
+    font-size: 18px; font-weight: 800; letter-spacing: 0.5px;
+    min-width: 26px; text-align: center;
+  }
+  .co .name { font-weight: 800; color: #fff; font-size: 36px; letter-spacing: 1.5px; }
+  .m-a .badge { background: rgba(212,175,55,0.22); color: #f0c75a; box-shadow: 0 0 12px rgba(212,175,55,0.18); }
+  .m-h .badge { background: rgba(74,158,255,0.20); color: #6ab1ff; box-shadow: 0 0 12px rgba(74,158,255,0.18); }
+  .m-u .badge { background: rgba(179,102,255,0.20); color: #c98aff; box-shadow: 0 0 12px rgba(179,102,255,0.18); }
+  .m-unicorn .badge { background: rgba(0,212,255,0.20); color: #5ce0ff; box-shadow: 0 0 12px rgba(0,212,255,0.18); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="eyebrow">EMBODIED AI · 2026</div>
+    <h1 class="title">具身智能产业链 · 公司速查</h1>
+    <div class="stat-row">
+      <div class="stat"><div class="num">80+</div><div class="lbl">上市标的</div></div>
+      <div class="stat"><div class="num">9</div><div class="lbl">一级独角兽</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">产业链层次</div></div>
+      <div class="stat"><div class="num">¥2000亿+</div><div class="lbl">2030 预期市场</div></div>
+    </div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg,#d4af37,#f0c75a)"></div>A 股</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg,#4a9eff,#6ab1ff)"></div>港股</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg,#b366ff,#c98aff)"></div>美股</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg,#00d4ff,#5ce0ff)"></div>独角兽</div>
+  </div>
+
+  <!-- L0 -->
+  <section class="layer" style="--layer-color:#ff6b6b">
+    <div class="layer-meta">
+      <div class="layer-id">L0</div>
+      <div class="layer-name">资源材料层</div>
+      <div class="layer-tag">MATERIALS</div>
+      <div class="layer-count"><strong>11</strong> A · <strong>1</strong> H</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">金力永磁</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">中科三环</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">宁波韵升</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">正海磁材</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">抚顺特钢</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">西部超导</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">中复神鹰</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">光威复材</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">宁德时代</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">赣锋锂业</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">华友钴业</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">比亚迪股份</span></span>
+    </div>
+  </section>
+
+  <!-- L1 -->
+  <section class="layer" style="--layer-color:#ff9f43">
+    <div class="layer-meta">
+      <div class="layer-id">L1</div>
+      <div class="layer-name">核心零部件层</div>
+      <div class="layer-tag">COMPONENTS</div>
+      <div class="layer-count"><strong>18</strong> A</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">绿的谐波</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">双环传动</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">秦川机床</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">中大力德</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">恒立液压</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">贝斯特</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">五洲新春</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">鼎智科技</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">步科股份</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">鸣志电器</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">伟创电气</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">江苏雷利</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">柯力传感</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">昊志机电</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">东华测试</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">奥普光电</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">兆威机电</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">汉宇集团</span></span>
+    </div>
+  </section>
+
+  <!-- L2 -->
+  <section class="layer" style="--layer-color:#feca57">
+    <div class="layer-meta">
+      <div class="layer-id">L2</div>
+      <div class="layer-name">控制系统层</div>
+      <div class="layer-tag">CONTROL</div>
+      <div class="layer-count"><strong>9</strong> A</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">汇川技术</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">埃斯顿</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">雷赛智能</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">信捷电气</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">固高科技</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">智微智能</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">新松机器人</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">新时达</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">拓斯达</span></span>
+    </div>
+  </section>
+
+  <!-- L3 -->
+  <section class="layer" style="--layer-color:#48dbfb">
+    <div class="layer-meta">
+      <div class="layer-id">L3</div>
+      <div class="layer-name">Robot Compute</div>
+      <div class="layer-tag">COMPUTE</div>
+      <div class="layer-count"><strong>11</strong> A · <strong>2</strong> H · <strong>3</strong> U</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">寒武纪</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">兆易创新</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">瑞芯微</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">地平线机器人</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">黑芝麻智能</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">NVIDIA</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">AMD</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Qualcomm</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">工业富联</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">中际旭创</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">新易盛</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">天孚通信</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">沪电股份</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">胜宏科技</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">鹏鼎控股</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">生益科技</span></span>
+    </div>
+  </section>
+
+  <!-- L4 -->
+  <section class="layer" style="--layer-color:#0abde3">
+    <div class="layer-meta">
+      <div class="layer-id">L4</div>
+      <div class="layer-name">仿真平台层</div>
+      <div class="layer-tag">SIMULATION</div>
+      <div class="layer-count"><strong>5</strong> A · <strong>1</strong> H · <strong>1</strong> U</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">能科科技</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">霍莱沃</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">奥比中光</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">凌云光</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">数据堂</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">商汤</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Alphabet</span></span>
+    </div>
+  </section>
+
+  <!-- L5 -->
+  <section class="layer" style="--layer-color:#5f27cd">
+    <div class="layer-meta">
+      <div class="layer-id">L5</div>
+      <div class="layer-name">VLA 基础模型</div>
+      <div class="layer-tag">VLA MODEL</div>
+      <div class="layer-count"><strong>2</strong> A · <strong>1</strong> H · <strong>2</strong> U · 独角兽</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">科大讯飞</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">云从科技</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">商汤</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Alphabet</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">NVIDIA</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">Physical Intelligence</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">Skild AI</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">World Labs</span></span>
+    </div>
+  </section>
+
+  <!-- L6 -->
+  <section class="layer" style="--layer-color:#ee5253">
+    <div class="layer-meta">
+      <div class="layer-id">L6</div>
+      <div class="layer-name">机器人整机</div>
+      <div class="layer-tag">HARDWARE OEM</div>
+      <div class="layer-count"><strong>1</strong> H · <strong>1</strong> U · 独角兽</div>
+    </div>
+    <div class="companies">
+      <span class="co m-h"><span class="badge">H</span><span class="name">优必选</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Tesla</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">宇树科技</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">智元机器人</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">银河通用</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">Figure AI</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">Agility Robotics</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">1X</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">傅利叶</span></span>
+      <span class="co m-unicorn"><span class="badge">★</span><span class="name">星动纪元</span></span>
+    </div>
+  </section>
+
+  <!-- L7 -->
+  <section class="layer" style="--layer-color:#10ac84">
+    <div class="layer-meta">
+      <div class="layer-id">L7</div>
+      <div class="layer-name">应用场景</div>
+      <div class="layer-tag">APPLICATIONS</div>
+      <div class="layer-count"><strong>6</strong> A · <strong>3</strong> H · <strong>2</strong> U</div>
+    </div>
+    <div class="companies">
+      <span class="co m-a"><span class="badge">A</span><span class="name">海康威视</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">顺丰控股</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">京东物流</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">极智嘉</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Amazon</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">九号公司</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">石头科技</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">天智航</span></span>
+      <span class="co m-h"><span class="badge">H</span><span class="name">微创医疗机器人</span></span>
+      <span class="co m-u"><span class="badge">U</span><span class="name">Intuitive Surgical</span></span>
+      <span class="co m-a"><span class="badge">A</span><span class="name">三一重工</span></span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
