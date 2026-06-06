@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>具身智能产业链全景图 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #05070f; color: #e6e9f5; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "SF Pro Display", "Helvetica Neue", sans-serif; }
+
+  .page {
+    width: 1680px;
+    padding: 60px 56px 80px;
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% 0%, rgba(120,80,255,0.15), transparent 60%),
+      radial-gradient(ellipse 800px 400px at 0% 30%, rgba(0,200,255,0.08), transparent 60%),
+      radial-gradient(ellipse 800px 400px at 100% 70%, rgba(255,120,80,0.08), transparent 60%),
+      linear-gradient(180deg, #05070f 0%, #0a0e27 50%, #05070f 100%);
+  }
+
+  /* ===== Header ===== */
+  .header { text-align: center; margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-block; padding: 6px 18px; border-radius: 999px;
+    background: linear-gradient(90deg, rgba(0,212,255,0.15), rgba(180,120,255,0.15));
+    border: 1px solid rgba(0,212,255,0.3);
+    font-size: 13px; letter-spacing: 3px; color: #9ad9ff;
+    text-transform: uppercase; margin-bottom: 24px;
+  }
+  .title {
+    font-size: 56px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(90deg, #ffffff 0%, #9ad9ff 40%, #b48aff 80%, #ffb48a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 16px;
+  }
+  .subtitle { font-size: 18px; color: #8a92ab; font-weight: 300; }
+  .meta-row {
+    display: flex; justify-content: center; gap: 28px; margin-top: 24px;
+    font-size: 13px; color: #6b7390;
+  }
+  .meta-row .dot { color: #00d4ff; }
+
+  /* ===== Legend ===== */
+  .legend {
+    display: flex; justify-content: center; gap: 28px;
+    padding: 16px 24px; margin: 0 auto 48px;
+    max-width: 1100px;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; backdrop-filter: blur(8px);
+  }
+  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #c8cee0; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 4px; }
+
+  /* ===== Layers ===== */
+  .layer-stack { display: flex; flex-direction: column; gap: 18px; position: relative; }
+  .layer {
+    position: relative; display: grid; grid-template-columns: 280px 1fr; gap: 28px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 18px;
+    backdrop-filter: blur(8px);
+  }
+  .layer::before {
+    content: ""; position: absolute; left: -1px; top: 24px; bottom: 24px; width: 4px; border-radius: 4px;
+    background: var(--layer-color, #00d4ff);
+    box-shadow: 0 0 24px var(--layer-color, #00d4ff);
+  }
+  .layer-meta { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+  .layer-id {
+    font-size: 56px; font-weight: 900; line-height: 1; letter-spacing: -2px;
+    background: linear-gradient(180deg, var(--layer-color, #00d4ff), color-mix(in srgb, var(--layer-color, #00d4ff) 30%, transparent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
+  }
+  .layer-name { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .layer-tag { font-size: 12px; color: #6b7390; letter-spacing: 1px; text-transform: uppercase; }
+  .layer-count { font-size: 13px; color: #8a92ab; margin-top: 4px; }
+  .layer-count strong { color: var(--layer-color, #00d4ff); font-weight: 700; }
+
+  .companies { display: flex; flex-direction: column; gap: 10px; }
+  .company-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .company {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 14px; border-radius: 10px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px; line-height: 1.3;
+  }
+  .company .badge {
+    display: inline-block; padding: 2px 6px; border-radius: 4px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+    background: var(--badge-bg, rgba(212,175,55,0.2)); color: var(--badge-fg, #d4af37);
+  }
+  .company .name { font-weight: 700; color: #fff; }
+  .company .biz { color: #8a92ab; font-weight: 400; }
+  .company .code { color: #6b7390; font-family: "SF Mono", "Menlo", monospace; font-size: 12px; }
+
+  /* Market color coding */
+  .m-a { --badge-bg: rgba(212,175,55,0.2); --badge-fg: #d4af37; }
+  .m-h { --badge-bg: rgba(74,158,255,0.18); --badge-fg: #4a9eff; }
+  .m-u { --badge-bg: rgba(179,102,255,0.18); --badge-fg: #b366ff; }
+  .m-unicorn { --badge-bg: rgba(0,212,255,0.18); --badge-fg: #00d4ff; }
+
+  /* ===== Arrows between layers ===== */
+  .arrow {
+    height: 22px; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.25);
+  }
+  .arrow svg { display: block; }
+
+  /* ===== Footer ===== */
+  .footer {
+    margin-top: 48px; padding: 24px 32px; text-align: center;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+  }
+  .footer .stat-row {
+    display: flex; justify-content: center; gap: 48px; margin-bottom: 16px;
+  }
+  .footer .stat .num {
+    font-size: 32px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(90deg, #00d4ff, #b48aff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .footer .stat .lbl { font-size: 12px; color: #6b7390; text-transform: uppercase; letter-spacing: 1.5px; }
+  .footer .disclaimer {
+    font-size: 12px; color: #555a73; line-height: 1.6; max-width: 1200px; margin: 0 auto;
+    padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="eyebrow">EMBODIED AI · 2026</div>
+    <h1 class="title">具身智能产业链全景图</h1>
+    <div class="subtitle">8 个层次 · 80+ 上市标的 · 一图看完整条产业链</div>
+    <div class="meta-row">
+      <span><span class="dot">●</span> 资源 → 硬件 → 控制 → 算力 → 仿真 → 模型 → 整机 → 场景</span>
+      <span>·</span>
+      <span>更新于 2026 年 6 月</span>
+    </div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#d4af37"></div>A 股（沪深）</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#4a9eff"></div>港股（HK）</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#b366ff"></div>美股（US）</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#00d4ff"></div>一级独角兽</div>
+  </div>
+
+  <div class="layer-stack">
+
+    <!-- L0 -->
+    <section class="layer" style="--layer-color:#ff6b6b">
+      <div class="layer-meta">
+        <div class="layer-id">L0</div>
+        <div class="layer-name">资源材料层</div>
+        <div class="layer-tag">MATERIALS · 机器人时代的"石油"</div>
+        <div class="layer-count"><strong>11</strong> 家 A 股 · <strong>1</strong> 家港股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">金力永磁</span><span class="code">300748</span><span class="biz">· 钕铁硼磁材龙头</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">中科三环</span><span class="code">000970</span><span class="biz">· 高性能钕铁硼</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">宁波韵升</span><span class="code">600366</span><span class="biz">· 钕铁硼磁材</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">正海磁材</span><span class="code">300224</span><span class="biz">· 高性能磁材出口</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">抚顺特钢</span><span class="code">600399</span><span class="biz">· 特种钢</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">西部超导</span><span class="code">688122</span><span class="biz">· 钛合金 + 高温合金</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">中复神鹰</span><span class="code">688295</span><span class="biz">· T700/T800 碳纤维</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">光威复材</span><span class="code">300699</span><span class="biz">· 军民两用碳纤维</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">宁德时代</span><span class="code">300750</span><span class="biz">· 动力 + 机器人电池</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">赣锋锂业</span><span class="code">002460</span><span class="biz">· 锂资源</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">华友钴业</span><span class="code">603799</span><span class="biz">· 镍钴锂一体化</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">比亚迪股份</span><span class="code">1211.HK</span><span class="biz">· 整车 + 电池</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L1 -->
+    <section class="layer" style="--layer-color:#ff9f43">
+      <div class="layer-meta">
+        <div class="layer-id">L1</div>
+        <div class="layer-name">核心零部件层</div>
+        <div class="layer-tag">COMPONENTS · 利润率最高的硬件环节</div>
+        <div class="layer-count"><strong>18</strong> 家 A 股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">绿的谐波</span><span class="code">688017</span><span class="biz">· 谐波减速器龙头</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">双环传动</span><span class="code">002472</span><span class="biz">· RV 减速器国产替代</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">秦川机床</span><span class="code">000837</span><span class="biz">· 机床 + RV 减速器</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">中大力德</span><span class="code">002896</span><span class="biz">· RV + 谐波双线</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">恒立液压</span><span class="code">601100</span><span class="biz">· 行星滚柱丝杠</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">贝斯特</span><span class="code">300580</span><span class="biz">· 精密零部件 + 丝杠</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">五洲新春</span><span class="code">603667</span><span class="biz">· 轴承 + 丝杠</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">鼎智科技</span><span class="code">873593</span><span class="biz">· 微小型丝杠</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">步科股份</span><span class="code">688160</span><span class="biz">· 无框力矩电机</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">鸣志电器</span><span class="code">603728</span><span class="biz">· 步进 + 无框电机</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">伟创电气</span><span class="code">688698</span><span class="biz">· 工控 + 机器人电机</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">江苏雷利</span><span class="code">300660</span><span class="biz">· 微型电机 + 灵巧手</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">柯力传感</span><span class="code">603662</span><span class="biz">· 六维力传感器</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">昊志机电</span><span class="code">300503</span><span class="biz">· 力矩电机 + 传感器</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">东华测试</span><span class="code">300354</span><span class="biz">· 力学测试</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">奥普光电</span><span class="code">002338</span><span class="biz">· 光电编码器</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">兆威机电</span><span class="code">003021</span><span class="biz">· 灵巧手关节模组</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L2 -->
+    <section class="layer" style="--layer-color:#feca57">
+      <div class="layer-meta">
+        <div class="layer-id">L2</div>
+        <div class="layer-name">控制系统层</div>
+        <div class="layer-tag">CONTROL · 机器人的"小脑"</div>
+        <div class="layer-count"><strong>9</strong> 家 A 股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">汇川技术</span><span class="code">300124</span><span class="biz">· 工控龙头 · 多卡位</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">埃斯顿</span><span class="code">002747</span><span class="biz">· 工业机器人 + 伺服</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">雷赛智能</span><span class="code">002979</span><span class="biz">· 步进 + 伺服 + 控制</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">信捷电气</span><span class="code">603416</span><span class="biz">· PLC + 伺服</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">固高科技</span><span class="code">301510</span><span class="biz">· 运动控制器</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">智微智能</span><span class="code">003997</span><span class="biz">· 工业 PC 控制器</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">新松机器人</span><span class="code">300024</span><span class="biz">· 工业机器人老牌</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">新时达</span><span class="code">002527</span><span class="biz">· 工业机器人</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">拓斯达</span><span class="code">300607</span><span class="biz">· 注塑 + 机器人</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L3 -->
+    <section class="layer" style="--layer-color:#48dbfb">
+      <div class="layer-meta">
+        <div class="layer-id">L3</div>
+        <div class="layer-name">Robot Compute</div>
+        <div class="layer-tag">COMPUTE · 机器人时代 GPU 层</div>
+        <div class="layer-count"><strong>11</strong> A 股 · <strong>2</strong> 港股 · <strong>3</strong> 美股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">寒武纪</span><span class="code">688256</span><span class="biz">· AI 芯片</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">兆易创新</span><span class="code">603986</span><span class="biz">· MCU + 嵌入式</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">瑞芯微</span><span class="code">603893</span><span class="biz">· 通用 SoC</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">地平线机器人</span><span class="code">9660.HK</span><span class="biz">· 机器人 SoC</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">黑芝麻智能</span><span class="code">2533.HK</span><span class="biz">· 自动驾驶 + 机器人</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">NVIDIA</span><span class="code">NVDA</span><span class="biz">· 算力霸权 · 全栈布局</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">AMD</span><span class="code">AMD</span><span class="biz">· AI 推理</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Qualcomm</span><span class="code">QCOM</span><span class="biz">· 边缘 AI 芯片</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">工业富联</span><span class="code">601138</span><span class="biz">· NVIDIA 服务器代工</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">中际旭创</span><span class="code">300308</span><span class="biz">· 800G 光模块龙头</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">新易盛</span><span class="code">300502</span><span class="biz">· 高速光模块</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">天孚通信</span><span class="code">300394</span><span class="biz">· 光器件</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">沪电股份</span><span class="code">002463</span><span class="biz">· AI 服务器 PCB</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">胜宏科技</span><span class="code">300476</span><span class="biz">· 高多层 PCB</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">鹏鼎控股</span><span class="code">002938</span><span class="biz">· 苹果链 + 服务器 PCB</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">生益科技</span><span class="code">600183</span><span class="biz">· 覆铜板</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L4 -->
+    <section class="layer" style="--layer-color:#0abde3">
+      <div class="layer-meta">
+        <div class="layer-id">L4</div>
+        <div class="layer-name">仿真平台层</div>
+        <div class="layer-tag">SIMULATION · 机器人版 Unreal Engine</div>
+        <div class="layer-count"><strong>5</strong> A 股 · <strong>1</strong> 港股 · <strong>1</strong> 美股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">能科科技</span><span class="code">603859</span><span class="biz">· 数字孪生</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">霍莱沃</span><span class="code">688701</span><span class="biz">· 仿真测试</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">奥比中光</span><span class="code">688322</span><span class="biz">· 3D 视觉感知</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">凌云光</span><span class="code">688400</span><span class="biz">· 机器视觉</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">数据堂</span><span class="code">829003</span><span class="biz">· 训练数据 + 仿真场景</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">商汤</span><span class="code">0020.HK</span><span class="biz">· 视觉大模型 + 世界模型</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Alphabet</span><span class="code">GOOGL</span><span class="biz">· DeepMind + Genie + Gemini</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L5 -->
+    <section class="layer" style="--layer-color:#5f27cd">
+      <div class="layer-meta">
+        <div class="layer-id">L5</div>
+        <div class="layer-name">VLA 基础模型层</div>
+        <div class="layer-tag">FOUNDATION MODEL · 千亿美元候选赛道</div>
+        <div class="layer-count"><strong>2</strong> A 股 · <strong>1</strong> 港股 · <strong>2</strong> 美股 · 独角兽</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">科大讯飞</span><span class="code">002230</span><span class="biz">· 多模态大模型</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">云从科技</span><span class="code">688327</span><span class="biz">· 多模态 + 视觉</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">商汤</span><span class="code">0020.HK</span><span class="biz">· 视觉大模型</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Alphabet</span><span class="code">GOOGL</span><span class="biz">· Gemini Robotics</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">NVIDIA</span><span class="code">NVDA</span><span class="biz">· GR00T</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">Physical Intelligence</span><span class="biz">· π0 / π0.5 · 估值 ≈ 150 亿美元+</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">Skild AI</span><span class="biz">· Skild Brain · 估值 ≈ 100 亿美元+</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">World Labs</span><span class="biz">· 李飞飞 · 3D 世界模型 · 融资 3 亿+</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L6 -->
+    <section class="layer" style="--layer-color:#ee5253">
+      <div class="layer-meta">
+        <div class="layer-id">L6</div>
+        <div class="layer-name">机器人整机层</div>
+        <div class="layer-tag">HARDWARE OEM · 机器人时代的"特斯拉"</div>
+        <div class="layer-count"><strong>1</strong> 港股 · <strong>1</strong> 美股 · 多家独角兽</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-h"><span class="badge">港股</span><span class="name">优必选</span><span class="code">9880.HK</span><span class="biz">· 人形机器人第一股</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Tesla</span><span class="code">TSLA</span><span class="biz">· Optimus · 自研全栈</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">宇树科技</span><span class="biz">· G1 9.9 万 · 价格屠夫 · 预计 IPO</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">智元机器人</span><span class="biz">· 稚晖君 · 比亚迪/立讯/蓝思股东</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">银河通用</span><span class="biz">· 通用 VLA · 腾讯/美团/红杉</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">Figure AI</span><span class="biz">· 估值 ≈ 400 亿美元+ · BMW 合作</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">Agility Robotics</span><span class="biz">· Digit · Amazon 客户</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">1X</span><span class="biz">· Neo · OpenAI 投资 · 家庭机器人</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">傅利叶</span><span class="biz">· 通用人形 + 康复机器人</span></div>
+          <div class="company m-unicorn"><span class="badge">独角兽</span><span class="name">星动纪元</span><span class="biz">· 通用人形 · 清华背景</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M20 0 L20 16 M12 12 L20 20 L28 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <!-- L7 -->
+    <section class="layer" style="--layer-color:#10ac84">
+      <div class="layer-meta">
+        <div class="layer-id">L7</div>
+        <div class="layer-name">应用场景层</div>
+        <div class="layer-tag">APPLICATIONS · 机器人最先在哪打工？</div>
+        <div class="layer-count"><strong>6</strong> A 股 · <strong>3</strong> 港股 · <strong>2</strong> 美股</div>
+      </div>
+      <div class="companies">
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">海康威视</span><span class="code">002415</span><span class="biz">· 机器视觉 + AGV</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">顺丰控股</span><span class="code">002352</span><span class="biz">· 物流配送</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">京东物流</span><span class="code">2618.HK</span><span class="biz">· 物流机器人</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">极智嘉</span><span class="code">02490.HK</span><span class="biz">· 仓储 AMR</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Amazon</span><span class="code">AMZN</span><span class="biz">· Kiva + Agility Digit</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">九号公司</span><span class="code">689009</span><span class="biz">· 配送机器人</span></div>
+          <div class="company m-a"><span class="badge">A股</span><span class="name">石头科技</span><span class="code">688169</span><span class="biz">· 家用机器人</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">天智航</span><span class="code">688277</span><span class="biz">· 骨科手术机器人</span></div>
+          <div class="company m-h"><span class="badge">港股</span><span class="name">微创医疗机器人</span><span class="code">2252.HK</span><span class="biz">· 多科室手术机器人</span></div>
+          <div class="company m-u"><span class="badge">美股</span><span class="name">Intuitive Surgical</span><span class="code">ISRG</span><span class="biz">· 达芬奇手术机器人</span></div>
+        </div>
+        <div class="company-row">
+          <div class="company m-a"><span class="badge">A股</span><span class="name">三一重工</span><span class="code">600031</span><span class="biz">· 智能工厂 + 自有机器人</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="footer">
+    <div class="stat-row">
+      <div class="stat"><div class="num">8</div><div class="lbl">产业链层次</div></div>
+      <div class="stat"><div class="num">80+</div><div class="lbl">上市标的</div></div>
+      <div class="stat"><div class="num">9+</div><div class="lbl">一级独角兽</div></div>
+      <div class="stat"><div class="num">¥2,000+ 亿</div><div class="lbl">2030 预期市场</div></div>
+    </div>
+    <div class="disclaimer">
+      <strong>免责声明</strong>：本全景图仅供产业链研究参考，不构成任何投资建议。<br>
+      所列上市公司信息为公开资料整理，财务数据以公司最新披露年报为准；估值、估值预测与融资数据来源为公开报道，可能与最新披露存在差异。<br>
+      一级市场独角兽估值与融资金额为公开市场口径，未上市标的流动性受限。<br>
+      投资有风险，决策需谨慎。任何因使用本图而产生的投资损失，本图作者不承担责任。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
