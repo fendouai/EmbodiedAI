@@ -205,6 +205,140 @@ L7  应用场景层
 
 ---
 
+## 三点五、公司深度报告（第三层）
+
+> ⚠️ **重要声明**：每份公司报告顶部均含**投资风险免责声明**。财务数据为公开市场口径，**不构成任何投资建议**。
+
+### L1 核心零部件层 · 18 家 A 股 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 绿的谐波 | 688017 | [L1-688017-绿的谐波.md](./docs/companies/L1-688017-绿的谐波.md) |
+| S | 双环传动 | 002472 | [L1-002472-双环传动.md](./docs/companies/L1-002472-双环传动.md) |
+| S | 恒立液压 | 601100 | [L1-601100-恒立液压.md](./docs/companies/L1-601100-恒立液压.md) |
+| S | 步科股份 | 688160 | [L1-688160-步科股份.md](./docs/companies/L1-688160-步科股份.md) |
+| S | 兆威机电 | 003021 | [L1-003021-兆威机电.md](./docs/companies/L1-003021-兆威机电.md) |
+| S | 柯力传感 | 603662 | [L1-603662-柯力传感.md](./docs/companies/L1-603662-柯力传感.md) |
+| A | 秦川机床 | 000837 | [L1-000837-秦川机床.md](./docs/companies/L1-000837-秦川机床.md) |
+| A | 中大力德 | 002896 | [L1-002896-中大力德.md](./docs/companies/L1-002896-中大力德.md) |
+| A | 贝斯特 | 300580 | [L1-300580-贝斯特.md](./docs/companies/L1-300580-贝斯特.md) |
+| A | 五洲新春 | 603667 | [L1-603667-五洲新春.md](./docs/companies/L1-603667-五洲新春.md) |
+| A | 鼎智科技 | 873593 | [L1-873593-鼎智科技.md](./docs/companies/L1-873593-鼎智科技.md) |
+| A | 鸣志电器 | 603728 | [L1-603728-鸣志电器.md](./docs/companies/L1-603728-鸣志电器.md) |
+| A | 伟创电气 | 688698 | [L1-688698-伟创电气.md](./docs/companies/L1-688698-伟创电气.md) |
+| A | 江苏雷利 | 300660 | [L1-300660-江苏雷利.md](./docs/companies/L1-300660-江苏雷利.md) |
+| B | 昊志机电 | 300503 | [L1-300503-昊志机电.md](./docs/companies/L1-300503-昊志机电.md) |
+| B | 东华测试 | 300354 | [L1-300354-东华测试.md](./docs/companies/L1-300354-东华测试.md) |
+| B | 奥普光电 | 002338 | [L1-002338-奥普光电.md](./docs/companies/L1-002338-奥普光电.md) |
+| B | 汉宇集团 | 300403 | [L1-300403-汉宇集团.md](./docs/companies/L1-300403-汉宇集团.md) |
+
+### L0 资源材料层 · 12 家上市公司 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 金力永磁 | 300748 | [L0-300748-金力永磁.md](./docs/companies/L0-300748-金力永磁.md) |
+| S | 宁德时代 | 300750 | [L0-300750-宁德时代.md](./docs/companies/L0-300750-宁德时代.md) |
+| S | 比亚迪股份 | 1211.HK | [L0-1211-比亚迪股份.md](./docs/companies/L0-1211-比亚迪股份.md) |
+| A | 中科三环 | 000970 | [L0-000970-中科三环.md](./docs/companies/L0-000970-中科三环.md) |
+| A | 宁波韵升 | 600366 | [L0-600366-宁波韵升.md](./docs/companies/L0-600366-宁波韵升.md) |
+| A | 中复神鹰 | 688295 | [L0-688295-中复神鹰.md](./docs/companies/L0-688295-中复神鹰.md) |
+| A | 光威复材 | 300699 | [L0-300699-光威复材.md](./docs/companies/L0-300699-光威复材.md) |
+| A | 赣锋锂业 | 002460 | [L0-002460-赣锋锂业.md](./docs/companies/L0-002460-赣锋锂业.md) |
+| A | 华友钴业 | 603799 | [L0-603799-华友钴业.md](./docs/companies/L0-603799-华友钴业.md) |
+| B | 正海磁材 | 300224 | [L0-300224-正海磁材.md](./docs/companies/L0-300224-正海磁材.md) |
+| B | 抚顺特钢 | 600399 | [L0-600399-抚顺特钢.md](./docs/companies/L0-600399-抚顺特钢.md) |
+| B | 西部超导 | 688122 | [L0-688122-西部超导.md](./docs/companies/L0-688122-西部超导.md) |
+
+### L2 控制系统层 · 9 家 A 股 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 汇川技术 | 300124 | [L2-300124-汇川技术.md](./docs/companies/L2-300124-汇川技术.md) |
+| A | 埃斯顿 | 002747 | [L2-002747-埃斯顿.md](./docs/companies/L2-002747-埃斯顿.md) |
+| A | 雷赛智能 | 002979 | [L2-002979-雷赛智能.md](./docs/companies/L2-002979-雷赛智能.md) |
+| A | 新松机器人 | 300024 | [L2-300024-新松机器人.md](./docs/companies/L2-300024-新松机器人.md) |
+| A | 固高科技 | 301510 | [L2-301510-固高科技.md](./docs/companies/L2-301510-固高科技.md) |
+| B | 信捷电气 | 603416 | [L2-603416-信捷电气.md](./docs/companies/L2-603416-信捷电气.md) |
+| B | 智微智能 | 003997 | [L2-003997-智微智能.md](./docs/companies/L2-003997-智微智能.md) |
+| B | 新时达 | 002527 | [L2-002527-新时达.md](./docs/companies/L2-002527-新时达.md) |
+| B | 拓斯达 | 300607 | [L2-300607-拓斯达.md](./docs/companies/L2-300607-拓斯达.md) |
+
+### L3 Robot Compute · 16 家 A+港+美 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 寒武纪 | 688256 | [L3-688256-寒武纪.md](./docs/companies/L3-688256-寒武纪.md) |
+| S | 中际旭创 | 300308 | [L3-300308-中际旭创.md](./docs/companies/L3-300308-中际旭创.md) |
+| S | 工业富联 | 601138 | [L3-601138-工业富联.md](./docs/companies/L3-601138-工业富联.md) |
+| S | NVIDIA | NVDA | [L3-NVDA-NVIDIA.md](./docs/companies/L3-NVDA-NVIDIA.md) |
+| A | 沪电股份 | 002463 | [L3-002463-沪电股份.md](./docs/companies/L3-002463-沪电股份.md) |
+| A | 兆易创新 | 603986 | [L3-603986-兆易创新.md](./docs/companies/L3-603986-兆易创新.md) |
+| A | 瑞芯微 | 603893 | [L3-603893-瑞芯微.md](./docs/companies/L3-603893-瑞芯微.md) |
+| A | 地平线机器人 | 9660.HK | [L3-9660-地平线机器人.md](./docs/companies/L3-9660-地平线机器人.md) |
+| A | 新易盛 | 300502 | [L3-300502-新易盛.md](./docs/companies/L3-300502-新易盛.md) |
+| A | 天孚通信 | 300394 | [L3-300394-天孚通信.md](./docs/companies/L3-300394-天孚通信.md) |
+| A | 胜宏科技 | 300476 | [L3-300476-胜宏科技.md](./docs/companies/L3-300476-胜宏科技.md) |
+| A | 鹏鼎控股 | 002938 | [L3-002938-鹏鼎控股.md](./docs/companies/L3-002938-鹏鼎控股.md) |
+| A | AMD | AMD | [L3-AMD-AMD.md](./docs/companies/L3-AMD-AMD.md) |
+| A | Qualcomm | QCOM | [L3-QCOM-Qualcomm.md](./docs/companies/L3-QCOM-Qualcomm.md) |
+| B | 生益科技 | 600183 | [L3-600183-生益科技.md](./docs/companies/L3-600183-生益科技.md) |
+| B | 黑芝麻智能 | 2533.HK | [L3-2533-黑芝麻智能.md](./docs/companies/L3-2533-黑芝麻智能.md) |
+
+### L4 仿真平台 · 7 家 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 奥比中光 | 688322 | [L4-688322-奥比中光.md](./docs/companies/L4-688322-奥比中光.md) |
+| S | 商汤 | 0020.HK | [L4-0020-商汤.md](./docs/companies/L4-0020-商汤.md) |
+| A | 能科科技 | 603859 | [L4-603859-能科科技.md](./docs/companies/L4-603859-能科科技.md) |
+| A | 数据堂 | 829003 | [L4-829003-数据堂.md](./docs/companies/L4-829003-数据堂.md) |
+| B | 霍莱沃 | 688701 | [L4-688701-霍莱沃.md](./docs/companies/L4-688701-霍莱沃.md) |
+| B | 凌云光 | 688400 | [L4-688400-凌云光.md](./docs/companies/L4-688400-凌云光.md) |
+| S | Alphabet | GOOGL | [L4-GOOGL-Alphabet.md](./docs/companies/L4-GOOGL-Alphabet.md) |
+
+### L5 VLA 模型 · 5 家 + 独角兽 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 科大讯飞 | 002230 | [L5-002230-科大讯飞.md](./docs/companies/L5-002230-科大讯飞.md) |
+| ★ | Physical Intelligence | 一级独角兽 | [L5-PI-Physical_Intelligence.md](./docs/companies/L5-PI-Physical_Intelligence.md) |
+| ★ | Skild AI | 一级独角兽 | [L5-Skild_AI.md](./docs/companies/L5-Skild_AI.md) |
+| ★ | World Labs | 一级独角兽 | [L5-World_Labs.md](./docs/companies/L5-World_Labs.md) |
+| B | 云从科技 | 688327 | [L5-688327-云从科技.md](./docs/companies/L5-688327-云从科技.md) |
+
+### L6 机器人整机 · 1 港 + 1 美 + 独角兽 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 优必选 | 9880.HK | [L6-9880-优必选.md](./docs/companies/L6-9880-优必选.md) |
+| S | Tesla | TSLA | [L6-TSLA-Tesla.md](./docs/companies/L6-TSLA-Tesla.md) |
+| ★ | 宇树科技 | 一级独角兽 | [L6-宇树科技.md](./docs/companies/L6-宇树科技.md) |
+| ★ | 智元机器人 | 一级独角兽 | [L6-智元机器人.md](./docs/companies/L6-智元机器人.md) |
+| ★ | 银河通用 | 一级独角兽 | [L6-银河通用.md](./docs/companies/L6-银河通用.md) |
+| ★ | Figure AI | 一级独角兽 | [L6-Figure_AI.md](./docs/companies/L6-Figure_AI.md) |
+| ★ | Agility Robotics | 一级独角兽 | [L6-Agility_Robotics.md](./docs/companies/L6-Agility_Robotics.md) |
+| ★ | 1X | 一级独角兽 | [L6-1X.md](./docs/companies/L6-1X.md) |
+| ★ | 傅利叶 | 一级独角兽 | [L6-傅利叶.md](./docs/companies/L6-傅利叶.md) |
+| ★ | 星动纪元 | 一级独角兽 | [L6-星动纪元.md](./docs/companies/L6-星动纪元.md) |
+
+### L7 应用场景 · 11 家 ✅ 已完成
+
+| Tier | 公司 | 代码 | 报告 |
+|------|------|------|------|
+| S | 海康威视 | 002415 | [L7-002415-海康威视.md](./docs/companies/L7-002415-海康威视.md) |
+| S | 京东物流 | 2618.HK | [L7-2618-京东物流.md](./docs/companies/L7-2618-京东物流.md) |
+| S | Amazon | AMZN | [L7-AMZN-Amazon.md](./docs/companies/L7-AMZN-Amazon.md) |
+| S | Intuitive Surgical | ISRG | [L7-ISRG-Intuitive_Surgical.md](./docs/companies/L7-ISRG-Intuitive_Surgical.md) |
+| A | 顺丰控股 | 002352 | [L7-002352-顺丰控股.md](./docs/companies/L7-002352-顺丰控股.md) |
+| A | 极智嘉 | 02490.HK | [L7-02490-极智嘉.md](./docs/companies/L7-02490-极智嘉.md) |
+| A | 九号公司 | 689009 | [L7-689009-九号公司.md](./docs/companies/L7-689009-九号公司.md) |
+| A | 石头科技 | 688169 | [L7-688169-石头科技.md](./docs/companies/L7-688169-石头科技.md) |
+| A | 微创医疗机器人 | 2252.HK | [L7-2252-微创医疗机器人.md](./docs/companies/L7-2252-微创医疗机器人.md) |
+| B | 天智航 | 688277 | [L7-688277-天智航.md](./docs/companies/L7-688277-天智航.md) |
+| B | 三一重工 | 600031 | [L7-600031-三一重工.md](./docs/companies/L7-600031-三一重工.md) |
+
+---
+
 ## 四、关键投资逻辑（速读版）
 
 > 详细论证见各章节及 [10-top-tracks](./docs/10-top-tracks.md)、[11-final-conclusion](./docs/11-final-conclusion.md)。
